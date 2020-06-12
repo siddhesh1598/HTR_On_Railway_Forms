@@ -38,34 +38,18 @@ After cloning the repository, install the necessary requirements for the project
 pip install -r requirements.txt
 ```
 
+The model is pre-trained on the words from the IAM dataset. If you wish to train the model on your own dataset, thenn follow the instructions given [here](https://github.com/githubharald/SimpleHTR). Also, the kernel parameters(for word segmentation) are set to work well for the given form design. 
+
+The *main.py* file under the *src* folder containes the main code of the system. It takes an image of the form as an inout and updates the results in the *database.csv* .
 
 
-The maskNet.model file is pre-trained in the images from the [Medical-Mask-Dataset](https://www.kaggle.com/vtech6/medical-masks-dataset). If you wish to train the model from scratch on your own dataset, prepare your dataset in the following way:
-1. Load the images in the "*images*" folder
-2. Load the xml files containing the bounding box co-ordinates and the labels "bad" or "good" in the "*labels*" folder (please check the xml files from the original dataset to get an idea of the iags used in the files)
-3. Store the "*images*" and "*labels*" folder under the "*dataset*" folder
+## To-Do
 
-You can then train the model by using the train.py file
-```
-python train.py --dataset dataset
-```
-![alt text](https://github.com/siddhesh1598/Face_Mask_Detection/blob/master/plot.png?raw=true)
+The model makes some errors while recognizing the words. It needs to be trained on different tyoes on handwriting, especially on the words which are frequently used while filling a railway form(station names, train numbers, etc).
 
-The plot for Training and Validation Loss and Accuracy.
+![alt text](https://github.com/siddhesh1598/HTR_On_Railway_Forms/blob/master/error.png?raw=true)
 
-To test the model on your webcam, use the main.py file. 
-```
-python main.py
-```
-
-You can pass some optional parameters for the main.py file:
-1. --face: path to face detector model directory <br>
-          *default: face_detector*
-2. --model: path to trained face mask detector model <br>
-          *default: maskNet.model*
-3. --confidence: minimum probability to filter weak detections <br>
-          *default: 0.35*
-
+Incorrectly recognized words.
 
 
 ## Authors
@@ -75,5 +59,5 @@ You can pass some optional parameters for the main.py file:
 
 ## Acknowledgments
 
-* Dataset: [Medical-Mask-Dataset](https://www.kaggle.com/vtech6/medical-masks-dataset) <br>
-Dataset by **Eden Social Welfare Foundation, Taiwan**. (Re-uploaded by [Mikolaj Witkowski](https://www.kaggle.com/vtech6))
+* Dataset: [IAM Dataset](http://www.fki.inf.unibe.ch/databases/iam-handwriting-database) <br>
+* CRNN model: [Harald Scheidl](https://github.com/githubharald) <br>
