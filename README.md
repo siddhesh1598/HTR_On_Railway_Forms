@@ -4,6 +4,10 @@
 
 Performing OCR on Railway Forms to capture user data and update it to the database. The model used is **CRNN model by [Harald Scheidl](https://github.com/githubharald)**. The model is trained on [IAM Dataset](http://www.fki.inf.unibe.ch/databases/iam-handwriting-database). The dataset contains 1,15,320 isolated and labeled words that have been extracted from pages of scanned text using an automatic segmentation scheme and were verified manually.
 
+![alt text](https://github.com/siddhesh1598/HTR_On_Railway_Forms/blob/master/System_Architecture.jpg?raw=true)
+
+System Architecture.
+
 ![alt text](https://github.com/siddhesh1598/HTR_On_Railway_Forms/blob/master/forms/RailwayForms_8.jpg?raw=true)
 
 Sample Railway Form.
@@ -34,7 +38,7 @@ After cloning the repository, install the necessary requirements for the project
 pip install -r requirements.txt
 ```
 
-### Training
+
 
 The maskNet.model file is pre-trained in the images from the [Medical-Mask-Dataset](https://www.kaggle.com/vtech6/medical-masks-dataset). If you wish to train the model from scratch on your own dataset, prepare your dataset in the following way:
 1. Load the images in the "*images*" folder
@@ -48,8 +52,6 @@ python train.py --dataset dataset
 ![alt text](https://github.com/siddhesh1598/Face_Mask_Detection/blob/master/plot.png?raw=true)
 
 The plot for Training and Validation Loss and Accuracy.
-
-### Testing
 
 To test the model on your webcam, use the main.py file. 
 ```
