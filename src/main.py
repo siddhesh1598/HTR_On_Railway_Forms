@@ -9,7 +9,7 @@ import imutils
 
 from Model import Model, DecoderType
 from WordSegmentation import wordSegmentation, prepareImg
-from bb import getBoundingBoxes
+from BoundingBoxDetector import getBoundingBoxes
 from database import updateDatabase
 from correction import correction
 
