@@ -1,0 +1,6 @@
+tensorflow==1.8.0
+opencv_python==4.0.0.21
+imutils==0.5.2
+numpy==1.18.1
+matplotlib==3.0.2
+Pillow==7.1.2
